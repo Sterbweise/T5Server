@@ -6,7 +6,7 @@ _mydir="$(dirname $_script)"
 # Name of the server shown in the title of the terminal window
 NAME="T5 Zombies 1"
 # Your Game Path (where there is binkw32.dll)
-PAT=~/T6Server/Server
+PAT=~/T5Server/Server
 # Paste the server key from https://platform.plutonium.pw/serverkeys
 KEY="YOURKEY"
 # Name of the config file the server should use. (default: dedicated_sp.cfg)

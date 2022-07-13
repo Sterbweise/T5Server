@@ -74,7 +74,6 @@ wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/pluto
 tar xfv plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
 rm plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
 chmod +x plutonium-updater
-mv ~/T6Server/plutonium-updater ~/T6Server/Plutonium/
 } > /dev/null 2>&1
 
 echo "[7/8] Zones Files Installation"
@@ -82,7 +81,6 @@ echo "[7/8] Zones Files Installation"
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1OUbv9Ul7v9oXPODPp7-DqgVXc6rqY-Ty' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1OUbv9Ul7v9oXPODPp7-DqgVXc6rqY-Ty" -O zone.zip && rm -rf /tmp/cookies.txt
 unzip zone.zip
 rm zone.zip
-mv ~/T6Server/zone ~/T6Server/Server/zone
 } > /dev/null 2>&1
 
 echo "[8/8] Installation Complete"
