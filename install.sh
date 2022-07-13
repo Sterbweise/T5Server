@@ -84,4 +84,4 @@ chmod +x ~/T5Server/Plutonium/T5_zm_server.sh
 } > /dev/null 2>&1
 
 echo -ne "[8/8] Installation Complete [#########################] (100%)                       \r"
-echo "\n"
+echo ""

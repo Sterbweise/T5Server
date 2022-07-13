@@ -22,7 +22,7 @@ sudo env "HOME=$HOME" bash install.sh
 ```
 4. Download Game File
 ```shell
-transmission-cli pluto_t5_full_game.torrent -w $HOME/T5Server
+sudo transmission-cli pluto_t5_full_game.torrent -w $HOME/T5Server
 ```
 5. After the download organize and sort the file
 ```shell
