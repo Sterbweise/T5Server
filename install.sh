@@ -1,13 +1,13 @@
 #!/bin/bash
 ## Update Region
-echo "[1/8] Set last version of your system"
+echo -ne "[1/8] Set last version of your system [####                     ] (13%)\r"
 {
 apt update && apt upgrade -y
 } > /dev/null 2>&1
 ## End Region
 
 ## Firewall Region
-echo "[2/8] Install firewall and allow 22 port..."
+echo -ne "[2/8] Install firewall and allow 22 port [#######                  ] (25%)\r"
 {
 apt install ufw fail2ban -y && \
 ufw allow 22/tcp && \
@@ -18,15 +18,15 @@ ufw -f enable
 ## End Region
 
 # Enable 32 bit packages
-echo "[3/8] Enable 32 bit packages..."
+echo -ne "[3/8] Enable 32 bit packages [###########              ] (38%)\r"
 {
 dpkg --add-architecture i386 && \
 apt-get update -y && \
-apt-get install wget gnupg2 software-properties-common apt-transport-https curl transmission-cli -y
+apt-get install wget gnupg2 software-properties-common apt-transport-https curl transmission-cli psmisc -y
 } > /dev/null 2>&1
 
 ## Wine Region
-echo "[4/8] Installing Wine..."
+echo -ne "[4/8] Installing Wine [##############           ] (50%)\r"
 {
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 apt-key add winehq.key && \
@@ -44,7 +44,7 @@ winecfg
 ## End Region
 
 ## Pre-Required for IW4MAdmin Region
-echo "[5/8] Installing Pre-Required for IW4MAdmin..."
+echo -ne "[5/8] Installing Pre-Required for IW4MAdmin [#################        ] (63%)\r"
 {
 #Installation .NET Core 3.1
 wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -67,7 +67,7 @@ apt-get update; \
 } > /dev/null 2>&1
 ## End Region
 
-echo "[6/8] Game Binary Installation"
+echo -ne "[6/8] Game Binary Installation [####################     ] (75%)\r"
 {
 wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
 tar xfv plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
@@ -76,15 +76,17 @@ chmod +x plutonium-updater
 mv $HOME/T5Server/plutonium-updater $HOME/T5Server/Plutonium
 } > /dev/null 2>&1
 
-echo "[7/8] Zones Files Installation"
+echo -ne "[7/8] Zones Files Installation [#######################  ] (88%)\r"
 {
 wget https://plutonium.pw/pluto_t5_full_game.torrent
 tmpfile=$(mktemp)
 chmod a+x $tmpfile
 echo "killall transmission-cli" > $tmpfile
+echo "rm $HOME/T5Server/pluto_t5_full_game.torrent" > $tmpfile
 echo "mv $HOME/T5Server/pluto_t5_full_game $HOME/T5Server/Server" > $tmpfile
 echo "rm -r $HOME/T5Server/Server/redist" > $tmpfile
 } > /dev/null 2>&1
 transmission-cli -f $tmpfile pluto_t5_full_game.torrent -w $HOME/T5Server
 
-echo "[8/8] Installation Complete"
+rm $HOME/T5Server/README.md
+echo -ne "[8/8] Installation Complete [#########################] (100%)\r"
