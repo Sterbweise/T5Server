@@ -20,9 +20,16 @@ cd ~/T5Server/
 ```shell
 sudo env "HOME=$HOME" bash install.sh
 ```
-4. Make file executable `T5Server.sh`.
+4. Download Game File
 ```shell
-chmod +x ~/T5Server/Plutonium/T5Server.sh
+transmission-cli pluto_t5_full_game.torrent -w $HOME/T5Server
+```
+5. After the download organize and sort the file
+```shell
+sudo rm $HOME/T5Server/pluto_t5_full_game.torrent
+sudo mv $HOME/T5Server/pluto_t5_full_game $HOME/T5Server/Server
+sudo rm -r $HOME/T5Server/Server/redist
+sudo rm $HOME/T5Server/README.md
 ```
 
 5. **Installation Complete**
@@ -32,9 +39,11 @@ chmod +x ~/T5Server/Plutonium/T5Server.sh
 ```shell
 cd ~/T5Server/Plutonium/
 ```
-2. Edit `T5Server.sh` with your information.
+2. Edit `T5_**_server.sh` with your information.
 ```shell
-nano T5Server.sh
+nano T5_mp_server.sh
+#OR
+nano T5_zm_server.sh
 ```
 3. Allow server port.
 ```shell
@@ -49,7 +58,9 @@ cd ~/T5Server/Plutonium
 ```
 2. Launch Server. 
 ```shell
-./T5Server.sh
+./T5_mp_server.sh
+#OR
+./T5_zm_server.sh
 ```
    I advise you to use `tmux` or `screen` to open and manage multiple servers.
 

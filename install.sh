@@ -76,17 +76,12 @@ chmod +x plutonium-updater
 mv $HOME/T5Server/plutonium-updater $HOME/T5Server/Plutonium
 } > /dev/null 2>&1
 
-echo -ne "[7/8] Zones Files Installation [#######################  ] (88%)                      \r"
+echo -ne "[7/8] Download Torrent Game File [#######################  ] (88%)                      \r"
 {
 wget https://plutonium.pw/pluto_t5_full_game.torrent
-tmpfile=$(mktemp)
-chmod a+x $tmpfile
-echo "killall transmission-cli" > $tmpfile
-echo "rm $HOME/T5Server/pluto_t5_full_game.torrent" > $tmpfile
-echo "mv $HOME/T5Server/pluto_t5_full_game $HOME/T5Server/Server" > $tmpfile
-echo "rm -r $HOME/T5Server/Server/redist" > $tmpfile
+chmod +x ~/T5Server/Plutonium/T5_mp_server.sh
+chmod +x ~/T5Server/Plutonium/T5_zm_server.sh
 } > /dev/null 2>&1
-transmission-cli -f $tmpfile pluto_t5_full_game.torrent -w $HOME/T5Server
 
-rm $HOME/T5Server/README.md
-echo -ne "[8/8] Installation Complete [#########################] (100%)                      \n"
+echo -ne "[8/8] Installation Complete [#########################] (100%)                      \r"
+echo "\n"
