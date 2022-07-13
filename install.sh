@@ -7,7 +7,7 @@ apt update && apt upgrade -y
 ## End Region
 
 ## Firewall Region
-echo -ne "[2/8] Install firewall and allow 22 port [#######                  ] (25%)                      \r"
+echo -ne "[2/8] Install firewall and allow 22 port [#######                  ] (25%)                   \r"
 {
 apt install ufw fail2ban -y && \
 ufw allow 22/tcp && \
@@ -18,7 +18,7 @@ ufw -f enable
 ## End Region
 
 # Enable 32 bit packages
-echo -ne "[3/8] Enable 32 bit packages [###########              ] (38%)                      \r"
+echo -ne "[3/8] Enable 32 bit packages [###########              ] (38%)                              \r"
 {
 dpkg --add-architecture i386 && \
 apt-get update -y && \
@@ -26,7 +26,7 @@ apt-get install wget gnupg2 software-properties-common apt-transport-https curl 
 } > /dev/null 2>&1
 
 ## Wine Region
-echo -ne "[4/8] Installing Wine [##############           ] (50%)                      \r"
+echo -ne "[4/8] Installing Wine [##############           ] (50%)                                    \r"
 {
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 apt-key add winehq.key && \
@@ -44,7 +44,7 @@ winecfg
 ## End Region
 
 ## Pre-Required for IW4MAdmin Region
-echo -ne "[5/8] Installing Pre-Required for IW4MAdmin [#################        ] (63%)                      \r"
+echo -ne "[5/8] Installing Pre-Required for IW4MAdmin [#################        ] (63%)            \r"
 {
 #Installation .NET Core 3.1
 wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -76,12 +76,12 @@ chmod +x plutonium-updater
 mv $HOME/T5Server/plutonium-updater $HOME/T5Server/Plutonium
 } > /dev/null 2>&1
 
-echo -ne "[7/8] Download Torrent Game File [#######################  ] (88%)                      \r"
+echo -ne "[7/8] Download Torrent Game File [#######################  ] (88%)                    \r"
 {
 wget https://plutonium.pw/pluto_t5_full_game.torrent
 chmod +x ~/T5Server/Plutonium/T5_mp_server.sh
 chmod +x ~/T5Server/Plutonium/T5_zm_server.sh
 } > /dev/null 2>&1
 
-echo -ne "[8/8] Installation Complete [#########################] (100%)                      \r"
+echo -ne "[8/8] Installation Complete [#########################] (100%)                       \r"
 echo "\n"
