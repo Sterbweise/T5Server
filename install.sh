@@ -22,7 +22,7 @@ echo "[3/8] Enable 32 bit packages..."
 {
 dpkg --add-architecture i386 && \
 apt-get update -y && \
-apt-get install wget gnupg2 software-properties-common apt-transport-https curl zip -y
+apt-get install wget gnupg2 software-properties-common apt-transport-https curl transmission-cli -y
 } > /dev/null 2>&1
 
 ## Wine Region
@@ -78,9 +78,13 @@ chmod +x plutonium-updater
 
 echo "[7/8] Zones Files Installation"
 {
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1OUbv9Ul7v9oXPODPp7-DqgVXc6rqY-Ty' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1OUbv9Ul7v9oXPODPp7-DqgVXc6rqY-Ty" -O zone.zip && rm -rf /tmp/cookies.txt
-unzip zone.zip
-rm zone.zip
+wget https://plutonium.pw/pluto_t5_full_game.torrent
+tmpfile=$(mktemp)
+chmod a+x $tmpfile
+echo "killall transmission-cli" > $tmpfile
+echo "mv ~/T5Server/pluto_t5_full_game ~/T5Server/Server" > $tmpfile
+echo "rm -r ~/T5Server/Server/redist" > $tmpfile
+transmission-cli -f $tmpfile pluto_t5_full_game.torrent -w ~/T5Server
 } > /dev/null 2>&1
 
 echo "[8/8] Installation Complete"
