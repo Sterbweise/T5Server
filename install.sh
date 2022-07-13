@@ -70,10 +70,10 @@ apt-get update; \
 echo "[6/8] Game Binary Installation"
 {
 wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
-
 tar xfv plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
 rm plutonium-updater-x86_64-unknown-linux-gnu.tar.gz
 chmod +x plutonium-updater
+mv $HOME/T5Server/plutonium-updater $HOME/T5Server/Plutonium
 } > /dev/null 2>&1
 
 echo "[7/8] Zones Files Installation"
@@ -82,9 +82,9 @@ wget https://plutonium.pw/pluto_t5_full_game.torrent
 tmpfile=$(mktemp)
 chmod a+x $tmpfile
 echo "killall transmission-cli" > $tmpfile
-echo "mv ~/T5Server/pluto_t5_full_game ~/T5Server/Server" > $tmpfile
-echo "rm -r ~/T5Server/Server/redist" > $tmpfile
-transmission-cli -f $tmpfile pluto_t5_full_game.torrent -w ~/T5Server
+echo "mv $HOME/T5Server/pluto_t5_full_game $HOME/T5Server/Server" > $tmpfile
+echo "rm -r $HOME/T5Server/Server/redist" > $tmpfile
 } > /dev/null 2>&1
+transmission-cli -f $tmpfile pluto_t5_full_game.torrent -w $HOME/T5Server
 
 echo "[8/8] Installation Complete"

@@ -18,22 +18,14 @@ cd ~/T5Server/
 ```
 3. Run the Installation Script `install.sh` .
 ```shell
-sudo bash install.sh
+sudo env "HOME=$HOME" bash install.sh
 ```
-4. Move Plutonium updater
-```shell
-mv ~/T6Server/plutonium-updater ~/T6Server/Plutonium/
-```
-5. Move Zone file to Server directory
-```shell
-mv ~/T6Server/zone ~/T6Server/Server/zone
-```
-6. Make file executable `T5Server.sh`.
+4. Make file executable `T5Server.sh`.
 ```shell
 chmod +x ~/T5Server/Plutonium/T5Server.sh
 ```
 
-7. **Installation Complete**
+5. **Installation Complete**
 
 ## Configuration
 1. Move to `Plutonium` Folder.
