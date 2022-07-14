@@ -5,7 +5,12 @@
 <img src="https://imgur.com/bBrx8Hf.png" alt="drawing" width="350"/> <img src="https://i.imgur.com/TdpsBgH.png" alt="drawing" width="200"/>
 
 # T5Server
-All files needed for a simple installation and configuration of a T5 server on linux.
+Simple installation and configuration of a T5 server on linux.
+
+## Required
++ Last Version of Debian 10 (Probably work on Debian 11)
++ Storage more than 30Gb
++ Sudoer permission
 
 ## Installation
 1. Download files : 
@@ -31,8 +36,7 @@ sudo mv $HOME/T5Server/pluto_t5_full_game $HOME/T5Server/Server
 sudo rm -r $HOME/T5Server/Server/redist
 sudo rm $HOME/T5Server/README.md
 ```
-
-5. **Installation Complete**
+<center> <b>Installation Complete</b> </center>
 
 ## Configuration
 1. Move to `Plutonium` Folder.
@@ -49,7 +53,7 @@ nano T5_zm_server.sh
 ```shell
 sudo bash ~/T5Server/Scripts/allow_port.sh
 ```
-**Configuration Complete**
+<center> <b>Configuration Complete</b> </center>
 
 ## Launch Server
 1. Move to `Plutonium` Folder.

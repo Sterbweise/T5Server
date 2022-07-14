@@ -22,7 +22,7 @@ echo -ne "[3/8] Enable 32 bit packages [###########              ] (38%)        
 {
 dpkg --add-architecture i386 && \
 apt-get update -y && \
-apt-get install wget gnupg2 software-properties-common apt-transport-https curl transmission-cli psmisc -y
+apt-get install wget gnupg2 software-properties-common apt-transport-https curl transmission-cli -y
 } > /dev/null 2>&1
 
 ## Wine Region
