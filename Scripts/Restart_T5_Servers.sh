@@ -16,9 +16,9 @@ for ((i=1; i<=$server_number; i++))
     process=$(echo "$servers"  | sed -n "${i}p")
     PID=$(echo "$process" | awk  '{print $2}')
     # Server port listening
-    port=$(echo "$process" | awk  '{print $21}' | sed -n '1p')
+    port=$(echo "$process" | awk  '{print $23}' | sed -n '1p')
     # CFG Name
-    name=$(echo "$process" | awk  '{print $24}' | sed -n '1p' | cut -d '.' -f1)
+    name=$(echo "$process" | awk  '{print $26}' | sed -n '1p' | cut -d '.' -f1)
     # Number of client connected on the server # IW4Madmin Required
     connected_client=$(curl -X GET "http://localhost:1624/server/clientactivity/${ipadress}${port}" 2>/dev/null | sed -n '/href="/,/a>/p' | grep 'ColorCode' | cut -d '>' -f2 | cut -d '<' -f1 | wc -l)
     # Kill Process if 0 client are connected
@@ -42,9 +42,9 @@ for ((i=1; i<=$server_number; i++))
     process=$(echo "$servers"  | sed -n "${i}p")
     PID=$(echo "$process" | awk  '{print $2}')
     # Server port listening
-    port=$(echo "$process" | awk  '{print $21}' | sed -n '1p')
+    port=$(echo "$process" | awk  '{print $23}' | sed -n '1p')
     # CFG Name
-    name=$(echo "$process" | awk  '{print $24}' | sed -n '1p' | cut -d '.' -f1)
+    name=$(echo "$process" | awk  '{print $26}' | sed -n '1p' | cut -d '.' -f1)
     # Number of client connected on the server # IW4Madmin Required
     connected_client=$(curl -X GET "http://localhost:1624/server/clientactivity/${ipadress}${port}" 2>/dev/null | sed -n '/href="/,/a>/p' | grep 'ColorCode' | cut -d '>' -f2 | cut -d '<' -f1 | wc -l)
     # Kill Process if 0 client are connected
