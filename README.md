@@ -1,5 +1,6 @@
 
 ![alt text](https://img.shields.io/badge/Debian-10-red?logo=Debian)
+![alt text](https://img.shields.io/badge/Debian-11-green?logo=Debian)
 ![alt text](https://img.shields.io/badge/Plutonium-T5-blue)
 
 <img src="https://imgur.com/bBrx8Hf.png" alt="drawing" width="350"/> <img src="https://i.imgur.com/TdpsBgH.png" alt="drawing" width="200"/>
@@ -8,7 +9,7 @@
 Simple installation and configuration of a T5 server on linux.
 
 ## Required
-+ Last Version of Debian 10 (Probably work on Debian 11)
++ Last Version of Debian 10 (Work on Debian 11)
 + Storage more than 30Gb
 + Sudoer permission
 
@@ -24,17 +25,6 @@ cd ~/T5Server/
 3. Run the Installation Script `install.sh` .
 ```shell
 sudo env "HOME=$HOME" bash install.sh
-```
-4. Download Game File
-```shell
-sudo transmission-cli pluto_t5_full_game.torrent -w $HOME/T5Server
-```
-5. After the download organize and sort the file
-```shell
-sudo rm $HOME/T5Server/pluto_t5_full_game.torrent
-sudo mv $HOME/T5Server/pluto_t5_full_game $HOME/T5Server/Server
-sudo rm -r $HOME/T5Server/Server/redist
-sudo rm $HOME/T5Server/README.md
 ```
 <center> <b>Installation Complete</b> </center>
 
@@ -67,6 +57,29 @@ cd ~/T5Server/Plutonium
 ./T5_zm_server.sh
 ```
    I advise you to use `tmux` or `screen` to open and manage multiple servers.
+
+## Issues
+### Wine display errors
+   + Don't care of these errors, plutonium server doesn't have graphic support.
+
+### Unable to load import '_BinkWaitStopAsyncThread@4' from module 'binkw32.dll'
+   + Check your PAT variable in ./T6Server.sh. (It will be ping binkw32.dll dir)
+   + Make sure to your user can read the file in all sub-dir of T6Server.
+
+### Server don't appear in Plutonium Servers List
+   + Check if your server port is open with UDP protocol. (Example: 4976)
+
+### Connection with nix socket lost
+   + Check your plutonium key validity
+   + Check if your plutonium key are correctly write in T6Server.sh
+
+### [DW][Auth] Handling authentication request
+   + Check your plutonium key validity
+   + Check if your plutonium key are correctly write in T6Server.sh
+
+### Some problems with the downloading of the torrent file
+   1. Delete Transmission config file ```shell rm -r ~/.config/transmission```
+   2. Restart installtion ```shell sudo env "HOME=$HOME" bash install.sh```
 
 ## Source
 • **Plutonium:** https://plutonium.pw <br>
