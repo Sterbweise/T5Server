@@ -3,7 +3,7 @@
 ![alt text](https://img.shields.io/badge/Debian-11-green?logo=Debian)
 ![alt text](https://img.shields.io/badge/Plutonium-T5-blue)
 
-<img src="https://imgur.com/bBrx8Hf.png" alt="drawing" width="350"/> <img src="https://i.imgur.com/TdpsBgH.png" alt="drawing" width="200"/>
+<img src="https://imgur.com/bBrx8Hf.png" alt="drawing" width="350"/> 
 
 # T5Server
 Simple installation and configuration of a T5 server on linux.
