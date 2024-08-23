@@ -159,7 +159,7 @@ mbinary=('Game Binary Installation.' 'Installation des fichiers binaires.')
 
     # Download Game File
     cd $HOME/T5Server/
-    wget https://plutonium.pw/pluto_t5_full_game.torrent
+    wget https://web.archive.org/web/20230106045330mp_/https://www.plutonium.pw/pluto_t5_full_game.torrent
     tmpfile=$(mktemp)
     chmod a+x $tmpfile
     echo "killall transmission-cli" > $tmpfile
