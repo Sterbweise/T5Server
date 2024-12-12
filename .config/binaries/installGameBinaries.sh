@@ -38,7 +38,7 @@ installGameBinaries () {
         checkAndInstallCommand "aria2c" "aria2"
         # Clean up any existing pluto_t5_full_game files/directories in /tmp
         rm -rf /tmp/pluto_t5_full_game*
-        aria2c --dir=/tmp --seed-time=0 --console-log-level=error --summary-interval=1 --select-file=$(aria2c -S "$WORKDIR/Resources/sources/pluto_t5_full_game.torrent" | grep -E "main/|zone/|binkw32.dll" | cut -d'|' -f1 | tr '\n' ',') "$WORKDIR/Resources/sources/pluto_t5_full_game.torrent"
+        aria2c --dir=/tmp --seed-time=0 --console-log-level=error --summary-interval=1 --select-file=$(aria2c -S "$WORKDIR/Resources/sources/pluto_t5_full_game.torrent" | grep -E "main/|zone/|binkw32.dll" | cut -d'|' -f1 | tr '\n' ',' | tr -d ' ') "$WORKDIR/Resources/sources/pluto_t5_full_game.torrent"
 
         # Move downloaded files to Resources
         rsync -a "/tmp/pluto_t5_full_game/main" "$WORKDIR/Server/"
