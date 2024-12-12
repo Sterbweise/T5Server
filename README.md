@@ -11,9 +11,10 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Sterbweise/T5Server)
 
 <div style="display: flex; align-items: center;">
-    <img src="https://github.com/user-attachments/assets/3ee17ff5-25fa-494e-b874-610507794756" alt="image" width="400"/>
+    <img src="https://github.com/user-attachments/assets/f7d88e45-2e01-4fe6-8834-6620eec4cf72" alt="image" width="400"/>
     <img src="https://imgur.com/bBrx8Hf.png" alt="Plutonium showLogo" width="400" style="margin-left: 10px;"/>
 </div>
+
 
 T5 Server is a comprehensive management suite for setting up and running Plutonium Call of Duty: Black Ops servers on Debian-based systems. This project aims to simplify the process of installing, configuring, and managing T5 servers, making it accessible to both beginners and experienced server administrators.
 
