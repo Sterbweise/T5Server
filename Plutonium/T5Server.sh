@@ -61,15 +61,6 @@ readonly MOD=""
 # 2. Set CONFIG_FILE to "dedicated_zm.cfg"
 # 3. Set GAME_MODE to "t5zm"
 
-# Additional startup options
-readonly ADDITIONAL_PARAMS=""
-# Example:
-#     +set sv_network_protocol 1
-#     +set sv_maxclients 4
-#     +set sv_anticheat 1
-#     +set sv_pure 1
-
-
 # Function to update server files
 # This function uses the Plutonium updater to ensure your server is running the latest version
 update_server() {
@@ -97,10 +88,9 @@ start_server() {
         nice -n -10 wine ./bin/plutonium-bootstrapper-win32.exe $GAME_MODE $GAME_PATH -dedicated \
             +set key $SERVER_KEY \
             +set fs_game $MOD \
+            +sv_config $CONFIG_FILE \
             +set net_port $SERVER_PORT \
-            +exec $CONFIG_FILE \
-            $ADDITIONAL_PARAMS \
-            +map_rotate \
+            +start_map_rotate \
             2>/dev/null
         
         # If the server stops, log the event and restart
