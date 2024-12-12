@@ -63,19 +63,19 @@ cd ~/T5Server/Plutonium
    + Don't care of these errors, plutonium server doesn't have graphic support.
 
 ### Unable to load import '_BinkWaitStopAsyncThread@4' from module 'binkw32.dll'
-   + Check your PAT variable in ./T6Server.sh. (It will be ping binkw32.dll dir)
-   + Make sure to your user can read the file in all sub-dir of T6Server.
+   + Check your PAT variable in ./T5Server.sh. (It will be ping binkw32.dll dir)
+   + Make sure to your user can read the file in all sub-dir of T5Server.
 
 ### Server don't appear in Plutonium Servers List
    + Check if your server port is open with UDP protocol. (Example: 4976)
 
 ### Connection with nix socket lost
    + Check your plutonium key validity
-   + Check if your plutonium key are correctly write in T6Server.sh
+   + Check if your plutonium key are correctly write in T5Server.sh
 
 ### [DW][Auth] Handling authentication request
    + Check your plutonium key validity
-   + Check if your plutonium key are correctly write in T6Server.sh
+   + Check if your plutonium key are correctly write in T5Server.sh
 
 ### Some problems with the downloading of the torrent file
    1. Delete Transmission config file ```shell rm -r ~/.config/transmission```
