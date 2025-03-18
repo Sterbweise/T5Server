@@ -106,7 +106,7 @@ Ensure all prerequisites are met before proceeding with the installation to guar
 
 2. Download and extract T5Server archive in a single command:
    ```bash
-   mkdir -p T5Server && wget -O T5Server.tar.gz https://github.com/Sterbweise/T5Server/releases/download/v1.0.0/T5Server.tar.gz && tar -xzvf T5Server.tar.gz -C T5Server && rm T5Server.tar.gz
+   mkdir -p T5Server && wget -O T5Server.tar.gz https://github.com/Sterbweise/T5Server/releases/download/1.0.0/T5Server.tar.gz && tar -xzvf T5Server.tar.gz -C T5Server && rm T5Server.tar.gz
    ```
 
 3. Move into the newly created T5Server directory:
