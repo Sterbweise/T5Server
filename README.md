@@ -99,7 +99,7 @@ Ensure all prerequisites are met before proceeding with the installation to guar
 
 ## Installation
 
-1. Navigate to the application installation directory:
+1. Navigate to the application installation directory **(MUST BE IN /OPT DIRECTORY)**:
    ```bash
    cd /opt
    ```
