@@ -61,6 +61,10 @@ readonly MOD=""
 # 2. Set CONFIG_FILE to "dedicated_zm.cfg"
 # 3. Set GAME_MODE to "t5zm"
 
+# Amount of players allowed on the server
+# This can be a number between 1-32.
+readonly MAXCLIENTS=18
+
 # Function to update server files
 # This function uses the Plutonium updater to ensure your server is running the latest version
 update_server() {
@@ -87,10 +91,9 @@ start_server() {
         # Start the server using Wine
         nice -n -10 wine ./bin/plutonium-bootstrapper-win32.exe $GAME_MODE $GAME_PATH -dedicated \
             +set key $SERVER_KEY \
-            +set fs_game $MOD \
-            +sv_config $CONFIG_FILE \
+            +set fs_game $MOD +exec $CONFIG_FILE \
             +set net_port $SERVER_PORT \
-            +start_map_rotate \
+            +set sv_maxclients $MAXCLIENTS +map_rotate \
             2>/dev/null
         
         # If the server stops, log the event and restart
