@@ -164,7 +164,7 @@ To configure your server:
 
 3. Save the file and exit the editor by pressing `Ctrl+x`, then `Y` to confirm, and Enter to save.
 
-Note: For Zombie mode, set `GAME_PATH` to "/opt/T5Server/Server/Zombie", `CONFIG_FILE` to "dedicated_zm.cfg", and `GAME_MODE` to "t6zm". Also, set the `MOD` variable to the path of the Zombie mode MOD.
+Note: For Zombie mode, set `CONFIG_FILE` to "dedicated_zm.cfg", and `GAME_MODE` to "t5sp". Also, set the `MOD` variable to the path of the Zombie mode MOD.
 
 Ensure all settings are correctly configured before launching your server.
 
@@ -289,12 +289,8 @@ This section provides solutions to common issues you may encounter while setting
 
 For additional assistance, consult the [Plutonium forums](https://forum.plutonium.pw/) or join the [Plutonium Discord](https://discord.gg/plutonium) community.
 
-## Documentation
-
-For more detailed information on server configuration, configuration options, and advanced features, please refer to our [Wiki](https://github.com/Sterbweise/T5Server/wiki).
-
 ## Contributing
-I appreciate contributions from the community! Here are some ways you can contribute to the T6 Server project:
+I appreciate contributions from the community! Here are some ways you can contribute to the T5 Server project:
 
 ### Submitting Pull Requests
 1. Fork the repository and create your branch from `main`.
