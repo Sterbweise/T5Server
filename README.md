@@ -17,7 +17,13 @@
 
 
 T5 Server is a comprehensive management suite for setting up and running Plutonium Call of Duty: Black Ops servers on Debian-based systems. This project aims to simplify the process of installing, configuring, and managing T5 servers, making it accessible to both beginners and experienced server administrators.
+<br>
 
+> ⚠️ During the installation, the game binaries are downloaded using the Plutonium T6 torrent, as this was the historically recommended method for setting up a T6 server and avoids manual file handling for non-technical users.
+> 
+> Due to copyright issues, Plutonium cannot officially support this method publicly in order to avoid legal problems. However, it still works; the limitation is purely for legal reasons.
+> 
+> If you do not want to use this step and prefer to provide your own legally obtained game files, you will currently need to manually adapt the script and point it to your existing game directory.
 
 ## Table of Contents
 - [T5 Server - Plutonium Black Ops Server Installer](#t5-server---plutonium-black-ops-server-installer)
